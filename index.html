@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <button type="button" id="jokeButton">Return joke</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#jokeButton").click(function(){
+                $.get("http://api.icndb.com/jokes/random", function(jokes){
+                    var acudit = jokes.value.joke;
+                    $("#resultat").html(acudit);
+                }); //ara cal que retorni l'acudit. 
+                // segurament aqui https://www.youtube.com/watch?v=pyvyBx4PAZU&list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID&index=73
+            });
+        });
+
+    </script>
+
+    <p id="resultat"></p>
+</body>
+</html>
